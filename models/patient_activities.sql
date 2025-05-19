@@ -9,9 +9,9 @@ WITH patient_activities_distinct AS(
 -- Clean duration_minutes column
 patient_activities AS (
     SELECT 
-    activity_id::INTEGER,
-    patient_id::INTEGER,
-    activity_type::STRING,
+    activity_id::INTEGER AS activity_id,
+    patient_id::INTEGER AS patient_id,
+    activity_type::STRING AS activity_type,
     activity_date::DATETIME as activity_date_time,
     CASE
         WHEN duration_minutes::STRING LIKE '%-%' THEN NULL
